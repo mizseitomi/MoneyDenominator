@@ -1,0 +1,128 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Címletező
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Kérem az összeget: ");
+            int összeg = int.Parse(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine("Kérem az összeget: {0} Ft", összeg);
+            Console.WriteLine();
+            Console.WriteLine("Szükséges címletek:");
+            int címletek = 0;
+
+            int húszezer = összeg / 20000;
+            int húszezerlevonás = összeg - (húszezer * 20000);
+            int tízezer = húszezerlevonás / 10000;
+            int tízezerlevonás = húszezerlevonás - (tízezer * 10000);
+
+            int ötezer = tízezerlevonás / 5000;
+            int ötezerlevonás = tízezerlevonás - (ötezer * 5000);
+            int kétezer = ötezerlevonás / 2000;
+            int kétezerlevonás = ötezerlevonás - (kétezer * 2000);
+            int ezer = kétezerlevonás / 1000;
+            int ezerlevonás = kétezerlevonás - (ezer * 1000);
+
+            int ötszáz = ezerlevonás / 500;
+            int ötszázlevonás = ezerlevonás - (ötszáz * 500);
+            int kétszáz = ötszázlevonás / 200;
+            int kétszázlevonás = ötszázlevonás - (kétszáz * 200);
+            int száz = kétszázlevonás / 100;
+            int százlevonás = kétszázlevonás - (száz * 100);
+
+            int ötven = százlevonás / 50;
+            int ötvenlevonás = százlevonás - (ötven * 50);
+            int húsz = ötvenlevonás / 20;
+            int húszlevonás = ötvenlevonás - (húsz * 20);
+            int tíz = húszlevonás / 10;
+            int tízlevonás = húszlevonás - (tíz * 10);
+            int öt = tízlevonás / 5;
+            int ötlevonás = tízlevonás - (öt * 5);
+            int kettő = ötlevonás / 2;
+            int kettőlevonás = ötlevonás - (kettő * 2);
+            int egy = kettőlevonás / 1;            
+
+            if (húszezer > 0)
+            {
+                Console.WriteLine("20 000 Ft: {0} db", húszezer);
+                címletek++;
+            }
+            if (tízezer > 0)
+            {
+                Console.WriteLine("10 000 Ft: {0} db", tízezer);
+                címletek++;
+            }
+            if (ötezer > 0)
+            {
+                Console.WriteLine(" 5 000 Ft: {0} db", ötezer);
+                címletek++;
+            }
+            if (kétezer > 0)
+            {
+                Console.WriteLine(" 2 000 Ft: {0} db", kétezer);
+                címletek++;
+            }
+            if (ezer > 0)
+            {
+                Console.WriteLine(" 1 000 Ft: {0} db", ezer);
+                címletek++;
+            }
+            if (ötszáz > 0)
+            {
+                Console.WriteLine("   500 Ft: {0} db", ötszáz);
+                címletek++;
+            }
+            if (kétszáz > 0)
+            {
+                Console.WriteLine("   200 Ft: {0} db", kétszáz);
+                címletek++;
+            }
+            if (száz > 0)
+            {
+                Console.WriteLine("   100 Ft: {0} db", száz);
+                címletek++;
+            }
+            if (ötven > 0)
+            {
+                Console.WriteLine("    50 Ft: {0} db", ötven);
+                címletek++;
+            }
+            if (húsz > 0)
+            {
+                Console.WriteLine("    20 Ft: {0} db", húsz);
+                címletek++;
+            }
+            if (tíz > 0)
+            {
+                Console.WriteLine("    10 Ft: {0} db", tíz);
+                címletek++;
+            }
+            if (öt > 0)
+            {
+                Console.WriteLine("     5 Ft: {0} db", öt);
+                címletek++;
+            }
+            if (kettő > 0)
+            {
+                Console.WriteLine("     2 Ft: {0} db", kettő);
+                címletek++;
+            }
+            if (egy > 0)
+            {
+                Console.WriteLine("     1 Ft: {0} db", egy);
+                címletek++;
+            }
+
+            Console.Write("\nSzükséges címletek összesen: {0} db ", húszezer + tízezer + ötezer + kétezer + ezer + ötszáz + kétszáz + száz + ötven + húsz + tíz + öt + kettő + egy);
+            Console.WriteLine("{0} féle címletben.", címletek);
+            Console.ReadLine();
+        }
+    }
+}
